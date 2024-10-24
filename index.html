@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Profil Mahasiswa</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showContent('biodata')">Biodata</a></li>
+            <li><a href="#" onclick="showContent('pendidikan')">Pendidikan</a></li>
+            <li><a href="#" onclick="showContent('pengalaman')">Pengalaman</a></li>
+            <li><a href="#" onclick="showContent('keahlian')">Keahlian</a></li>
+            <li><a href="#" onclick="showContent('publikasi')">Publikasi</a></li>
+        </ul>
+    </nav>
+
+    <section id="content">
+        <!-- Konten awal (Biodata) -->
+        <h2><strong>Biodata</strong></h2>
+        <p>NIM: 2023071053</p>
+        <p>Nama: Muhammad Rafi Irfan</p>
+        <p>Agama: Islam</p>
+        <p>Tanggal Lahir: 1 September 2005</p>
+        <p>Tempat Lahir: Tangerang Selatan</p>
+    </section>
+
+    <aside>
+        <h2>Hobi: </h2>
+        <p>Coding</p>
+        <p>Bulutangkis</p>
+        <p>Gaming</p>
+    </aside>
+
+    <footer>
+        <p>Twitter: @akun <br> FB: @akun <br> Instagram: @akun</p>
+        <p>© Copyright 2024 Muhammad Rafi Irfan. All Rights Reserved</p>
+        <p><strong>Muhammad Rafi Irfan</strong> <br> Web Profile</p>
+    </footer>
+
+    <script>
+        const showContent = (contentType) => {
+            const content = document.getElementById('content');
+
+            switch (contentType) {
+                case 'biodata':
+                    content.innerHTML = `
+                        <h2>Biodata</h2>
+                        <p>NIM: 2023071053</p>
+                        <p>Nama: Muhammad Rafi Irfan</p>
+                        <p>Agama: Islam</p>
+                        <p>Tanggal Lahir: 1 September 2005</p>
+                        <p>Tempat Lahir: Tangerang Selatan</p>
+                    `;
+                    break;
+                case 'pendidikan':
+                    content.innerHTML = `
+                        <h2>Pendidikan</h2>
+                        <p>SD: MI Soebono Mantofani</p>
+                        <p>MTS: MTS Soebono Mantofani</p>
+                        <p>SMK: Software Engineering, SMK Bina Informatika</p>
+                        <p>S1: Informatika, Universitas Pembangunan Jaya</p>
+                    `;
+                    break;
+                case 'pengalaman':
+                    content.innerHTML = `
+                        <h2>Pengalaman</h2>
+                        <p>Sep - Des 2023 | Web Developer | Internship PT Enam Dua Teknologi | Jakarta Selatan, ID</p>
+                        <p>Feb - Jun 2024 | Full Stack Web Developer - Freelance | PT Atlantis Services Indonesia | Jakarta Selatan, ID</p>
+                    `;
+                    break;
+                case 'keahlian':
+                    content.innerHTML = `
+                        <h2>Keahlian</h2>
+                        <p>React, Quart.py, Laravel, Django</p>
+                    `;
+                    break;
+                case 'publikasi':
+                    content.innerHTML = `
+                        <h2>Publikasi</h2>
+                        <p>Project Website Penjualan PT Atlantis Services Indonesia</p>
+                    `;
+                    break;
+                default:
+                    content.innerHTML = `<h2>Biodata</h2>`;
+            }
+        }
+    </script>
+</body>
+
+</html>

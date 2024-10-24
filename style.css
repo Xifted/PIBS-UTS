@@ -1,0 +1,137 @@
+/* Styling Umum */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header header header"
+        "nav section aside"
+        "footer footer footer";
+    min-height: 100vh;
+}
+
+header, footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding-block: 20px;
+    border-bottom: 5px solid #2980b9;
+    
+    grid-area: header;
+}
+
+nav {
+    background-color: #2980b9;
+    padding: 20px;
+
+    grid-area: nav;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ecf0f1;
+}
+
+section {
+    padding: 30px;
+    background-color: #ffffff;
+
+    grid-area: section;
+}
+
+aside {
+    padding: 30px;
+    background-color: #ecf0f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+    grid-area: aside;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    grid-area: footer;
+}
+
+/* Tampilan Tablet Landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        grid-template-columns: 25% 75%;
+        grid-template-areas: 
+            "header header"
+            "nav section"
+            "aside aside"
+            "footer footer";
+    }
+
+    aside {
+        grid-column: span 2;
+    }
+}
+
+/* Tampilan Tablet Portrait */
+@media (min-width: 426px) and (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "section"
+            "aside"
+            "footer";
+    }
+
+    header, nav, section, aside, footer {
+        width: 100%;
+    }
+
+    nav ul{
+        display: flex;
+        gap: 1rem;
+    }
+    html, body, section {
+        width: 100vw;
+    }
+}
+
+/* Tampilan Smartphone */
+@media (max-width: 425px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "section"
+            "aside"
+            "footer";
+    }
+
+    header, nav, section, aside, footer  {
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+}
